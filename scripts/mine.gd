@@ -3,7 +3,6 @@ extends Area2D
 var gold = 0
 var level = 1
 var timer : int = 0
-@onready var ui = $"../Camera2D/ui"
 @onready var goldcounter =  $"../Camera2D/ui/gold"
 @onready var level_label = $Level
 @onready var time_left = $time_left
@@ -50,7 +49,8 @@ func _on_timer_timeout():
 	if level == 4:
 		gold += 200
 	print(gold)
-	goldcounter.text = str(gold)
+	if goldcounter != null:
+		goldcounter.text = str(gold)
 	print("timer is", timer)
 	print("level is", level)
 
