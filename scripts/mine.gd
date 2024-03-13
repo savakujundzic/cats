@@ -1,14 +1,17 @@
 extends Area2D
 
-var gold = 0
+var gold : int = 0
 var level = 1
 var timer : int = 0
-@onready var goldcounter =  $"../Camera2D/ui/gold"
+
+
 @onready var level_label = $Level
 @onready var time_left = $time_left
 @onready var upgrade_time = $upgrade_time
 
-
+'''
+	when left click is pressed
+'''
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
@@ -24,9 +27,12 @@ func on_click():
 		timer = timer + 10
 	if level == 4 and timer < 1:
 		timer = timer + 10
+		
+	# check whether the timer is still going and if it is then stop it
 	if upgrade_time.time_left > 0:
 		upgrade_time.stop()
 	else:
+		
 		time_left.visible = true
 		upgrade_time.wait_time = timer
 		upgrade_time.start()
@@ -48,11 +54,10 @@ func _on_timer_timeout():
 		gold += 150
 	if level == 4:
 		gold += 200
-	print(gold)
-	if goldcounter != null:
-		goldcounter.text = str(gold)
-	print("timer is", timer)
-	print("level is", level)
+	print("gold : ", gold)
+	print("timer : ", timer)
+	print("level : ", level)
+	print()
 
 func _process(_delta):
 	if upgrade_time.time_left == 0:
