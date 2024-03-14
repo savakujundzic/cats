@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpdwilcufkl1h"]
+[gd_scene load_steps=11 format=3 uid="uid://bpdwilcufkl1h"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_rg8up"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="1_v04a5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brqv464oudtwk" path="res://scenes/mine.tscn" id="2_v88sx"]
 [ext_resource type="Texture2D" uid="uid://cyaog2nc7i8md" path="res://assets/grasstileset128x128.png" id="4_ysp8f"]
 [ext_resource type="Texture2D" uid="uid://bwor5k13ne34v" path="res://assets/grass_selected.png" id="5_wcxy1"]
+[ext_resource type="Script" path="res://scenes/TileMap.gd" id="7_af266"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mv42"]
 texture = ExtResource("4_ysp8f")
@@ -1575,15 +1576,18 @@ offset_bottom = -323.0
 position = Vector2(470, 282)
 scale = Vector2(0.9, 0.9)
 
+[node name="Mine2" parent="." instance=ExtResource("2_v88sx")]
+position = Vector2(274, 277)
+scale = Vector2(0.9, 0.9)
+
+[node name="Mine3" parent="." instance=ExtResource("2_v88sx")]
+position = Vector2(736, 285)
+scale = Vector2(0.9, 0.9)
+
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
 tile_set = SubResource("TileSet_20msi")
 format = 2
 layer_0/tile_data = PackedInt32Array(65537, 65537, 0, 131073, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 131078, 65537, 0, 131077, 65537, 0, 65541, 65537, 0, 65542, 65537, 0, 65540, 65537, 0, 131076, 65537, 0, 131075, 65537, 0, 65539, 65537, 0, 131074, 65537, 0, 65538, 65537, 0)
 layer_1/tile_data = PackedInt32Array()
-
-[node name="Mine2" parent="." instance=ExtResource("2_v88sx")]
-position = Vector2(714, 203)
-
-[node name="Mine3" parent="." instance=ExtResource("2_v88sx")]
-position = Vector2(286, 374)
+script = ExtResource("7_af266")
