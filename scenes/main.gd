@@ -11,6 +11,7 @@ func _ready():
 	print(mines.size())
 	
 func _process(delta):
+	
 	var total = 0
 	for i in mines:
 		total += i.gold 

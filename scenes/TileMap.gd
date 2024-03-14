@@ -30,7 +30,7 @@ func MoveMouse():
 	if add_mines_pressed == true and Input.is_action_just_pressed("LeftClick") :
 		var mine = preload("res://scenes/mine.tscn")
 		var mine_instance = mine.instantiate()
-		mine_position = Vector2(selectedtile)
+		mine_position = Vector2(selectedtile) + Vector2(25, -40)
 		mine_instance.position = mine_position
 		mine_instance.add_to_group("mine", true)
 		main.add_child(mine_instance)
@@ -38,7 +38,7 @@ func MoveMouse():
 
 func _process(delta):
 	var tile = local_to_map(get_global_mouse_position())
-	selectedtile = map_to_local(tile)
+	selectedtile = map_to_local(tile) 
 	for x in gridsize:
 		for y in gridsize:
 			erase_cell(1, Vector2(x, y))
