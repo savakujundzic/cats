@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8klm66tvc7eq"
-path="res://.godot/imported/Gold_Mine1.png-1a2e5cf532c1b4b1cb75a7a5bb9e68c3.ctex"
+uid="uid://dw6ckuknp217h"
+path="res://.godot/imported/grass_tileset_16x16.png-d4e9cfd1cc0dbceb3862e11939487c91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gold_Mine1.png"
-dest_files=["res://.godot/imported/Gold_Mine1.png-1a2e5cf532c1b4b1cb75a7a5bb9e68c3.ctex"]
+source_file="res://assets/grasstiles/grass_tileset_16x16.png"
+dest_files=["res://.godot/imported/grass_tileset_16x16.png-d4e9cfd1cc0dbceb3862e11939487c91.ctex"]
 
 [params]
 

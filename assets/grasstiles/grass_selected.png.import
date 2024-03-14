@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hsg556e3aats"
-path="res://.godot/imported/goldmine.png-3f29acd904c74c5bb7986493602c4f30.ctex"
+uid="uid://bwor5k13ne34v"
+path="res://.godot/imported/grass_selected.png-1d6fbeae3e6604be6ccd718873ea7aff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/goldmine.png"
-dest_files=["res://.godot/imported/goldmine.png-3f29acd904c74c5bb7986493602c4f30.ctex"]
+source_file="res://assets/grasstiles/grass_selected.png"
+dest_files=["res://.godot/imported/grass_selected.png-1d6fbeae3e6604be6ccd718873ea7aff.ctex"]
 
 [params]
 

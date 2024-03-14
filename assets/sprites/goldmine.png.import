@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvslbknsludoq"
-path="res://.godot/imported/cat_miner_white_bg.png-89af464f7bef5027de37860a582dcf55.ctex"
+uid="uid://hsg556e3aats"
+path="res://.godot/imported/goldmine.png-8d8c62abf7acf214d8d357b936edbafe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat_miner_white_bg.png"
-dest_files=["res://.godot/imported/cat_miner_white_bg.png-89af464f7bef5027de37860a582dcf55.ctex"]
+source_file="res://assets/sprites/goldmine.png"
+dest_files=["res://.godot/imported/goldmine.png-8d8c62abf7acf214d8d357b936edbafe.ctex"]
 
 [params]
 

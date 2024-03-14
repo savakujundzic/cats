@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyaog2nc7i8md"
-path="res://.godot/imported/grasstileset128x128.png-850438b1f96bb1081a40964478a540f3.ctex"
+uid="uid://bvslbknsludoq"
+path="res://.godot/imported/cat_miner_white_bg.png-5ade5248c90b352635e0cb2b9fcf1eb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grasstileset128x128.png"
-dest_files=["res://.godot/imported/grasstileset128x128.png-850438b1f96bb1081a40964478a540f3.ctex"]
+source_file="res://assets/sprites/cat_miner_white_bg.png"
+dest_files=["res://.godot/imported/cat_miner_white_bg.png-5ade5248c90b352635e0cb2b9fcf1eb5.ctex"]
 
 [params]
 

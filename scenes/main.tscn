@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://bpdwilcufkl1h"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_rg8up"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_rg8up"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="1_v04a5"]
 [ext_resource type="PackedScene" uid="uid://dlph24aphutd6" path="res://scenes/ui.tscn" id="1_yqwoj"]
 [ext_resource type="PackedScene" uid="uid://brqv464oudtwk" path="res://scenes/mine.tscn" id="2_v88sx"]
-[ext_resource type="Texture2D" uid="uid://cyaog2nc7i8md" path="res://assets/grasstileset128x128.png" id="4_ysp8f"]
-[ext_resource type="Texture2D" uid="uid://bwor5k13ne34v" path="res://assets/grass_selected.png" id="5_wcxy1"]
-[ext_resource type="Script" path="res://scenes/TileMap.gd" id="7_af266"]
+[ext_resource type="Texture2D" uid="uid://cyaog2nc7i8md" path="res://assets/grasstiles/grasstileset128x128.png" id="4_ysp8f"]
+[ext_resource type="Texture2D" uid="uid://bwor5k13ne34v" path="res://assets/grasstiles/grass_selected.png" id="5_wcxy1"]
+[ext_resource type="Script" path="res://scripts/TileMap.gd" id="7_af266"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mv42"]
 texture = ExtResource("4_ysp8f")

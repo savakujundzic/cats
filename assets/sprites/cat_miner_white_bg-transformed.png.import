@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw6ckuknp217h"
-path="res://.godot/imported/grass_tileset_16x16.png-fdeb5ed89ee496bab24922cfcf3227eb.ctex"
+uid="uid://jcwp7d0tiwa"
+path="res://.godot/imported/cat_miner_white_bg-transformed.png-2a3a06d2e2f08398d50c733d20d03d9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grass_tileset_16x16/grass_tileset_16x16.png"
-dest_files=["res://.godot/imported/grass_tileset_16x16.png-fdeb5ed89ee496bab24922cfcf3227eb.ctex"]
+source_file="res://assets/sprites/cat_miner_white_bg-transformed.png"
+dest_files=["res://.godot/imported/cat_miner_white_bg-transformed.png-2a3a06d2e2f08398d50c733d20d03d9a.ctex"]
 
 [params]
 
