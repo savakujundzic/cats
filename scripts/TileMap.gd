@@ -1,5 +1,6 @@
 extends TileMap
 
+signal add_mine(mine : Area2D)
 
 @onready var main = $".."
 var mine_position
@@ -7,6 +8,7 @@ var gridsize = 10
 var dictionary = {}
 var selectedtile
 var add_mines_pressed :bool = false
+var no_of_mines : int = 0
 
 
 
@@ -34,7 +36,7 @@ func MoveMouse():
 		mine_instance.position = mine_position
 		mine_instance.add_to_group("mine", true)
 		main.add_child(mine_instance)
-
+		emit_signal("add_mine", mine_instance)
 
 func _process(delta):
 	var tile = local_to_map(get_global_mouse_position())
