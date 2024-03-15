@@ -1577,14 +1577,6 @@ offset_bottom = -323.0
 position = Vector2(470, 282)
 scale = Vector2(0.9, 0.9)
 
-[node name="Mine2" parent="." instance=ExtResource("2_v88sx")]
-position = Vector2(274, 277)
-scale = Vector2(0.9, 0.9)
-
-[node name="Mine3" parent="." instance=ExtResource("2_v88sx")]
-position = Vector2(736, 285)
-scale = Vector2(0.9, 0.9)
-
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
 tile_set = SubResource("TileSet_20msi")

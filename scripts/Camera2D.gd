@@ -10,7 +10,6 @@ func _input(event):
 			mouse_pos = event.position
 		else:
 			touch = false
-			
 	elif event is InputEventMouseMotion and touch:
 		var mouseposition = mouse_pos - event.position
 		translate(mouseposition)
