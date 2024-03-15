@@ -12,24 +12,22 @@ var no_of_mines : int = 0
 
 
 
+
 func _physics_process(delta):
-	# You have to check if add_mines is pressed and if it is the bool
-	# add_mines_pressed returns true
+	for x in gridsize:
+		for y in gridsize:
+			dictionary[str(Vector2(x, y))] = {
+				"Type" = "Grass"
+			}
+			set_cell( 0, Vector2(x, y), 1, Vector2i(1, 0), 0)
+
 	if Input.is_action_just_pressed("add_mines"):
 		add_mines_pressed = true
-		for x in gridsize:
-			for y in gridsize:
-				dictionary[str(Vector2(x, y))] = {
-					"Type" = "Grass"
-				}
-				set_cell( 0, Vector2(x, y), 1, Vector2i(1, 0), 0)
-		#gets access to a tile that the mouse is on top off
-		
 	MoveMouse()
 
 func MoveMouse():
 	# you check if add_mines_pressed is true and if you click left click and then it adds mine
-	if add_mines_pressed == true and Input.is_action_just_pressed("LeftClick") :
+	if add_mines_pressed == true and Input.is_action_just_pressed("LeftClick"):
 		var mine = preload("res://scenes/mine.tscn")
 		var mine_instance = mine.instantiate()
 		mine_position = Vector2(selectedtile) + Vector2(25, -40)
@@ -48,4 +46,12 @@ func _process(delta):
 	if dictionary.has(str(tile)):
 		set_cell(1, tile, 2, Vector2i(0, 0), 0)
 			
+
+
+
+func _on_mine_placer_toggled(toggled_on):
+	if toggled_on == true:
+		add_mines_pressed = true
+	else:
+		add_mines_pressed = false
 
