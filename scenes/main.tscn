@@ -1595,4 +1595,5 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 0, 1, 65537, 0, 2, 65537, 0, 3, 6
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("7_af266")
 
+[connection signal="mouse_entered" from="Camera2D/ui/mine_placer" to="TileMap" method="_on_mine_placer_mouse_entered"]
 [connection signal="toggled" from="Camera2D/ui/mine_placer" to="TileMap" method="_on_mine_placer_toggled"]

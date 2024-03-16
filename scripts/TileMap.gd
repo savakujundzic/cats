@@ -55,3 +55,7 @@ func _on_mine_placer_toggled(toggled_on):
 	else:
 		add_mines_pressed = false
 
+
+
+func _on_mine_placer_mouse_entered():
+	add_mines_pressed = false
