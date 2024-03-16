@@ -3,15 +3,27 @@ extends Area2D
 var gold : int = 0
 var level = 1
 var timer : int = 0
+<<<<<<< Updated upstream
 
+=======
+var clicks_on_mine = 0
+>>>>>>> Stashed changes
 
+@onready var main = $".."
+@onready var mine = $"."
 @onready var level_label = $Level
 @onready var time_left = $time_left
 @onready var upgrade_time = $upgrade_time
+<<<<<<< Updated upstream
 
 '''
 	when left click is pressed
 '''
+=======
+@onready var upgrade_mine_button = $upgrade_mine_button
+@onready var remove_mine_button = $remove_mine_button
+@onready var mine_array = main.mines
+>>>>>>> Stashed changes
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
@@ -60,10 +72,20 @@ func _on_timer_timeout():
 	print()
 
 func _process(_delta):
+<<<<<<< Updated upstream
+=======
+
+	if clicks_on_mine % 2 == 0:
+		upgrade_mine_button.visible = false
+		remove_mine_button.visible = false
+		level_label.visible = false
+>>>>>>> Stashed changes
 	if upgrade_time.time_left == 0:
 		time_left.visible = false
 	level_label.text = str("Level\n",level)
 	time_left.set_text(str(upgrade_time.get_time_left()).pad_decimals(1))
 
 
-
+func _on_remove_mine_button_pressed():
+	mine_array.erase(mine)
+	mine.queue_free()
