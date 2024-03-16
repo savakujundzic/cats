@@ -11,6 +11,8 @@ var clicks_on_mine = 0
 @onready var upgrade_time = $upgrade_time
 @onready var upgrade_mine_button = $upgrade_mine_button
 @onready var remove_mine_button = $remove_mine_button
+@onready var main = $".."
+@onready var mine_array = main.mines
 
 '''
 	when left click is pressed
@@ -74,4 +76,6 @@ func _on_upgrade_mine_button_pressed():
 	if upgrade_time.time_left == 0:
 		time_left.visible = false
 
-
+func _on_remove_mine_button_pressed():
+	mine_array.erase(mine)
+	mine.queue_free()
