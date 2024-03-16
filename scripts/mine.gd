@@ -15,6 +15,13 @@ var clicks_on_mine = 0
 @onready var time_left = $time_left
 @onready var upgrade_time = $upgrade_time
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+@onready var upgrade_mine_button = $upgrade_mine_button
+@onready var remove_mine_button = $remove_mine_button
+@onready var main = $".."
+@onready var mine_array = main.mines
+>>>>>>> Stashed changes
 
 '''
 	when left click is pressed
@@ -85,7 +92,29 @@ func _process(_delta):
 	level_label.text = str("Level\n",level)
 	time_left.set_text(str(upgrade_time.get_time_left()).pad_decimals(1))
 
+<<<<<<< Updated upstream
 
+=======
+func _on_upgrade_mine_button_pressed():
+	if level == 1 and timer < 1:
+		timer = timer + 10
+	if level == 2 and timer < 1:
+		timer = timer + 10
+	if level == 3 and timer < 1:
+		timer = timer + 10
+	if level == 4 and timer < 1:
+		timer = timer + 10
+	# check whether the timer is still going and if it is then stop it
+	if upgrade_time.time_left > 0:
+		upgrade_time.stop()
+	else:
+		time_left.visible = true
+		upgrade_time.wait_time = timer
+		upgrade_time.start()
+		upgrade_time.one_shot = true
+	if upgrade_time.time_left == 0:
+		time_left.visible = false
+>>>>>>> Stashed changes
 func _on_remove_mine_button_pressed():
 	mine_array.erase(mine)
 	mine.queue_free()
