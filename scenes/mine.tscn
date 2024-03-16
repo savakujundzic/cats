@@ -25,6 +25,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Level" type="Label" parent="."]
+visible = false
 offset_left = -53.0
 offset_top = -64.0
 offset_right = 16.0
@@ -42,5 +43,25 @@ vertical_alignment = 1
 
 [node name="upgrade_time" type="Timer" parent="."]
 
+[node name="upgrade_mine_button" type="Button" parent="."]
+visible = false
+offset_left = -78.0
+offset_top = 108.0
+offset_right = -23.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 11
+text = "upgrade"
+
+[node name="remove_mine_button" type="Button" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = 108.0
+offset_right = 47.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 11
+text = "remove"
+
 [connection signal="timeout" from="time_for_gold" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="upgrade_time" to="." method="_on_upgrade_time_timeout"]
+[connection signal="pressed" from="upgrade_mine_button" to="." method="_on_upgrade_mine_button_pressed"]
+[connection signal="pressed" from="remove_mine_button" to="." method="_on_remove_mine_button_pressed"]
