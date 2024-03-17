@@ -29,3 +29,7 @@ func _on_tilemap_add_mine(mine : Area2D):
 	mines.append(mine)
 	no_of_mines += 1
 	print(no_of_mines)
+
+
+func _on_mine_placer_mouse_entered():
+	pass # Replace with function body.

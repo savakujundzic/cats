@@ -47,15 +47,11 @@ func _process(delta):
 		set_cell(1, tile, 2, Vector2i(0, 0), 0)
 			
 
-
-
 func _on_mine_placer_toggled(toggled_on):
 	if toggled_on == true:
 		add_mines_pressed = true
 	else:
 		add_mines_pressed = false
-
-
 
 func _on_mine_placer_mouse_entered():
 	add_mines_pressed = false

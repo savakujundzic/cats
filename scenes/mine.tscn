@@ -44,7 +44,6 @@ vertical_alignment = 1
 [node name="upgrade_time" type="Timer" parent="."]
 
 [node name="upgrade_mine_button" type="Button" parent="."]
-visible = false
 offset_left = -78.0
 offset_top = 108.0
 offset_right = -23.0
@@ -53,13 +52,12 @@ theme_override_font_sizes/font_size = 11
 text = "upgrade"
 
 [node name="remove_mine_button" type="Button" parent="."]
-visible = false
-offset_left = -8.0
-offset_top = 108.0
-offset_right = 47.0
-offset_bottom = 132.0
-theme_override_font_sizes/font_size = 11
-text = "remove"
+offset_left = 19.0
+offset_top = -26.0
+offset_right = 42.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 12
+text = "-"
 
 [connection signal="timeout" from="time_for_gold" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="upgrade_time" to="." method="_on_upgrade_time_timeout"]
