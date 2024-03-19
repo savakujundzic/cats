@@ -6,17 +6,21 @@ var timer : int = 0
 var clicks_on_mine = 0
 @onready var mine = $"."
 
+signal destroy_mine(mine : Area2D)
+
 @onready var level_label = $Level
 @onready var time_left = $time_left
 @onready var upgrade_time = $upgrade_time
 @onready var upgrade_mine_button = $upgrade_mine_button
 @onready var remove_mine_button = $remove_mine_button
 @onready var main = $".."
-@onready var mine_array = main.mines
 
-'''
-	when left click is pressed
-'''
+func _ready():
+	level_label.visible = false
+	upgrade_mine_button.visible = false
+	remove_mine_button.visible = false
+	
+# when left click is pressed handle events
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
@@ -24,10 +28,10 @@ func _input_event(_viewport, event, _shape_idx):
 		self.on_click()
 
 func on_click():
-	level_label.visible = true
+	level_label.visible = !level_label.visible
 	clicks_on_mine = clicks_on_mine + 1
-	upgrade_mine_button.visible = true
-	remove_mine_button.visible = true
+	upgrade_mine_button.visible = !upgrade_mine_button.visible
+	remove_mine_button.visible = !remove_mine_button.visible
 
 func _on_upgrade_time_timeout():
 	level = level + 1
@@ -47,10 +51,6 @@ func _on_timer_timeout():
 	print()
 
 func _process(_delta):
-	if clicks_on_mine % 2 == 0:
-		upgrade_mine_button.visible = false
-		remove_mine_button.visible = false
-		level_label.visible = false
 	if upgrade_time.time_left == 0:
 		time_left.visible = false
 	level_label.text = str("Level\n",level)
@@ -77,8 +77,6 @@ func _on_upgrade_mine_button_pressed():
 		time_left.visible = false
 
 
-
-
 func _on_remove_mine_button_pressed():
-	mine_array.erase(mine)
+	emit_signal("destroy_mine", get_node("."))
 	mine.queue_free()
