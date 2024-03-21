@@ -19,7 +19,7 @@ func _physics_process(delta):
 			dictionary[str(Vector2(x, y))] = {
 				"Type" = "Grass"
 			}
-			set_cell( 0, Vector2(x, y), 1, Vector2i(1, 0), 0)
+			set_cell( 0, Vector2(x, y), 1, Vector2i(0, 0), 0)
 
 	if Input.is_action_just_pressed("add_mines"):
 		add_mines_pressed = true
@@ -30,7 +30,7 @@ func MoveMouse():
 	if add_mines_pressed == true and Input.is_action_just_pressed("LeftClick"):
 		var mine = preload("res://scenes/mine.tscn")
 		var mine_instance = mine.instantiate()
-		mine_position = Vector2(selectedtile) + Vector2(25, -40)
+		mine_position = Vector2(selectedtile) + Vector2(25, -70)
 		mine_instance.position = mine_position
 		mine_instance.add_to_group("mine", true)
 		main.add_child(mine_instance)
@@ -44,7 +44,7 @@ func _process(delta):
 			erase_cell(1, Vector2(x, y))
 		# sets the tile to grass_selected
 	if dictionary.has(str(tile)):
-		set_cell(1, tile, 2, Vector2i(0, 0), 0)
+		set_cell(1, tile, 0, Vector2i(0, 0), 0)
 			
 
 func _on_mine_placer_toggled(toggled_on):
