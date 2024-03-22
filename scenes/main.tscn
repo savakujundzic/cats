@@ -56,9 +56,12 @@ scale = Vector2(0.9, 0.9)
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
+y_sort_enabled = true
 tile_set = SubResource("TileSet_20msi")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(327682, 1, 0)
+layer_1/y_sort_enabled = true
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("7_af266")
 
