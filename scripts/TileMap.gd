@@ -50,6 +50,8 @@ func _process(delta):
 			# sets the tile to grass_selected
 		if dictionary.has(str(tile)):
 			set_cell(1, tile, 0, Vector2i(0, 0), 0)
+	else:
+		add_mines_pressed = false
 
 
 
