@@ -4,9 +4,13 @@ extends Node2D
 var total_gold : int
 var mines := []
 var no_of_mines : int
-@onready var goldcounter = get_node("Camera2D/ui/gold")
+@onready var shop = $Camera2D/shop
+@onready var goldcounter = get_node("Camera2D/gold/gold")
+@onready var shop_button = $Camera2D/shop_button
 
 func _ready():
+	shop.visible = false
+	shop_button.visible = true
 	get_node("TileMap").add_mine.connect(_on_tilemap_add_mine)
 	get_node("Mine").destroy_mine.connect(_on_mine_destroy_mine)
 	for i in get_children():
@@ -15,7 +19,6 @@ func _ready():
 	no_of_mines = mines.size()
 	
 func _process(delta):
-	
 	var total = 0
 	for i in mines:
 		total += i.gold
@@ -37,10 +40,6 @@ func _on_tilemap_add_mine(mine : Area2D):
 	no_of_mines += 1
 	print(no_of_mines)
 
-
-func _on_mine_placer_mouse_entered():
-	pass # Replace with function body.
-
 '''
 	emitter : Mine
 	signal  : destroy_mine
@@ -48,3 +47,11 @@ func _on_mine_placer_mouse_entered():
 '''
 func _on_mine_destroy_mine(mine : Area2D):
 	mines.erase(mine)
+
+func _on_shop_button_pressed():
+	shop.visible = true 
+	shop_button.visible = false
+
+func _on_exit_pressed():
+	shop_button.visible = true
+	shop.visible = false
