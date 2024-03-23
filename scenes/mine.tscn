@@ -59,6 +59,18 @@ offset_bottom = -1.0
 theme_override_font_sizes/font_size = 12
 text = "-"
 
+[node name="not_enough_gold" type="Label" parent="."]
+visible = false
+offset_left = -168.0
+offset_top = -94.0
+offset_right = 90.0
+offset_bottom = -40.0
+theme_override_font_sizes/font_size = 31
+text = "Not enough gold!"
+
+[node name="label_time" type="Timer" parent="."]
+wait_time = 1.505
+
 [connection signal="timeout" from="time_for_gold" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="upgrade_time" to="." method="_on_upgrade_time_timeout"]
 [connection signal="pressed" from="upgrade_mine_button" to="." method="_on_upgrade_mine_button_pressed"]

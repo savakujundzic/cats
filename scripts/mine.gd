@@ -4,8 +4,8 @@ var gold : int = 0
 var level = 1
 var timer : int = 0
 var clicks_on_mine = 0
+var level_price = 0
 @onready var mine = $"."
-
 signal destroy_mine(mine : Area2D)
 
 @onready var level_label = $Level
@@ -59,11 +59,11 @@ func _process(_delta):
 func _on_upgrade_mine_button_pressed():
 	if level == 1 and timer < 1:
 		timer = timer + 10
-	if level == 2 and timer < 1:
+	if level == 2 and timer < 1 and gold>= level_price:
 		timer = timer + 10
-	if level == 3 and timer < 1:
+	if level == 3 and timer < 1 and gold>= level_price:
 		timer = timer + 10
-	if level == 4 and timer < 1:
+	if level == 4 and timer < 1 and gold>= level_price:
 		timer = timer + 10
 	# check whether the timer is still going and if it is then stop it
 	if upgrade_time.time_left > 0:
@@ -75,6 +75,7 @@ func _on_upgrade_mine_button_pressed():
 		upgrade_time.one_shot = true
 	if upgrade_time.time_left == 0:
 		time_left.visible = false
+
 
 
 func _on_remove_mine_button_pressed():
