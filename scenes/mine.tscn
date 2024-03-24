@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cklr7ucvl21rw" path="res://assets/mbs_icp_u423/icp_u423/Buildings/warehouse_maroon_b.png" id="2_1oukr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqxuw"]
-size = Vector2(88, 92)
+size = Vector2(79, 57)
 
 [node name="Mine" type="Area2D" groups=["mine"]]
 position = Vector2(510, 252)
@@ -17,7 +17,7 @@ scale = Vector2(0.764706, 0.931624)
 texture = ExtResource("2_1oukr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-30, 44)
+position = Vector2(-33.5, 50.5)
 shape = SubResource("RectangleShape2D_kqxuw")
 
 [node name="time_for_gold" type="Timer" parent="."]

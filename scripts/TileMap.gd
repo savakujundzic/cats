@@ -12,7 +12,6 @@ var no_of_mines : int = 0
 var button_for_mine_pressed :bool = false
 var is_mine_button_pressed :bool = false
 
-
 func _physics_process(delta):
 	for x in gridsize:
 		for y in gridsize:
