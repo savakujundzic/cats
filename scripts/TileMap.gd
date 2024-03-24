@@ -1,5 +1,6 @@
 extends TileMap
 
+# create a signal whena a mine is added to tilemap
 signal add_mine(mine : Area2D)
 
 @onready var main = $".."
