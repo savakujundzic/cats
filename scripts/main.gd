@@ -7,6 +7,7 @@ var no_of_mines : int
 @onready var shop = $Camera2D/shop
 @onready var goldcounter = get_node("Camera2D/gold/gold")
 @onready var shop_button = $Camera2D/shop_button
+@onready var tile_map = $TileMap
 
 func _ready():
 	shop.visible = false

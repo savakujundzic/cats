@@ -53,7 +53,7 @@ offset_left = 76.0
 offset_top = 360.0
 offset_right = 268.0
 offset_bottom = 488.0
-text = "mine"
+text = "mine ( 500 gold)"
 
 [node name="exit" type="Button" parent="Camera2D/shop"]
 layout_mode = 0
