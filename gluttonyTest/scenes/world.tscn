@@ -1,33 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://kb8pduus5sj4"]
+[gd_scene load_steps=5 format=3 uid="uid://kb8pduus5sj4"]
 
-[ext_resource type="Texture2D" uid="uid://bdiwmpq7qdtbx" path="res://gluttonyTest/assets/placeable_objects/spritesheet.png" id="1_weydx"]
 [ext_resource type="Script" path="res://gluttonyTest/scripts/world.gd" id="2_2tka5"]
 [ext_resource type="Texture2D" uid="uid://bedpi1liweh5m" path="res://gluttonyTest/assets/spritesheet (3).png" id="2_n5dyq"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x55lk"]
-resource_name = "building"
-texture = ExtResource("1_weydx")
-texture_region_size = Vector2i(168, 191)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhu0n"]
 resource_name = "building"
@@ -51,7 +25,6 @@ texture_region_size = Vector2i(132, 68)
 tile_shape = 1
 tile_size = Vector2i(132, 68)
 sources/4 = SubResource("TileSetAtlasSource_lhu0n")
-sources/1 = SubResource("TileSetAtlasSource_x55lk")
 
 [node name="world" type="TileMap"]
 y_sort_enabled = true
