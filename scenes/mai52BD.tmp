@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpdwilcufkl1h"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_rg8up"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="1_v04a5"]
+[ext_resource type="PackedScene" uid="uid://dlph24aphutd6" path="res://scenes/gold.tscn" id="1_yqwoj"]
+[ext_resource type="PackedScene" uid="uid://brqv464oudtwk" path="res://scenes/mine.tscn" id="2_v88sx"]
+[ext_resource type="Texture2D" uid="uid://d2vpxatyfuw3f" path="res://assets/mbs_icp_u423/grass_selected_tile.png" id="5_14xcy"]
+[ext_resource type="Texture2D" uid="uid://cud1deiley3gn" path="res://assets/mbs_icp_u423/icp_u423/Grounds + Roads/ground_grass.png" id="6_pfwsu"]
+[ext_resource type="Script" path="res://scripts/TileMap.gd" id="7_af266"]
+[ext_resource type="PackedScene" uid="uid://bmgm6j0fgpnyk" path="res://scenes/shop.tscn" id="8_yryqk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hkjw"]
+texture = ExtResource("5_14xcy")
+texture_region_size = Vector2i(132, 68)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x2yvd"]
+texture = ExtResource("6_pfwsu")
+texture_region_size = Vector2i(132, 68)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_20msi"]
+tile_shape = 1
+tile_size = Vector2i(132, 68)
+sources/0 = SubResource("TileSetAtlasSource_3hkjw")
+sources/1 = SubResource("TileSetAtlasSource_x2yvd")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rg8up")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 323)
+zoom = Vector2(1.285, 1.285)
+script = ExtResource("1_v04a5")
+
+[node name="gold" parent="Camera2D" instance=ExtResource("1_yqwoj")]
+z_index = 1
+offset_left = -575.0
+offset_top = -323.0
+offset_right = -575.0
+offset_bottom = -323.0
+
+[node name="shop" parent="Camera2D" instance=ExtResource("8_yryqk")]
+visible = false
+offset_left = -442.0
+offset_top = -253.0
+offset_right = -442.0
+offset_bottom = -253.0
+
+[node name="buy_mine" type="Button" parent="Camera2D/shop"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 360.0
+offset_right = 268.0
+offset_bottom = 488.0
+text = "mine"
+
+[node name="exit" type="Button" parent="Camera2D/shop"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 127.0
+offset_bottom = 107.0
+text = "x"
+
+[node name="shop_button" type="Button" parent="Camera2D"]
+visible = false
+offset_left = 330.0
+offset_top = 156.0
+offset_right = 416.0
+offset_bottom = 227.0
+text = "shop
+"
+
+[node name="Mine" parent="." instance=ExtResource("2_v88sx")]
+position = Vector2(423, 143)
+scale = Vector2(0.9, 0.9)
+
+[node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+y_sort_enabled = true
+tile_set = SubResource("TileSet_20msi")
+format = 2
+layer_0/y_sort_enabled = true
+layer_1/y_sort_enabled = true
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("7_af266")
+
+[connection signal="pressed" from="Camera2D/shop/buy_mine" to="TileMap" method="_on_buy_mine_pressed"]
+[connection signal="pressed" from="Camera2D/shop/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Camera2D/shop/exit" to="TileMap" method="_on_exit_pressed"]
+[connection signal="pressed" from="Camera2D/shop_button" to="." method="_on_shop_button_pressed"]
