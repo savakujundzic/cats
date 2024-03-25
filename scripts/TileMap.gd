@@ -1,7 +1,7 @@
 extends TileMap
 
 # create a signal whena a mine is added to tilemap
-signal add_mine(mine : Area2D)
+signal add_mine(mine : Area2D, build_cost : int)
 
 @onready var main = $".."
 var mine_position
@@ -12,7 +12,7 @@ var add_mines_pressed :bool = false
 var no_of_mines : int = 0
 var button_for_mine_pressed :bool = false
 var is_mine_button_pressed :bool = false
-
+var build_cost = 50
 func _physics_process(delta):
 	for x in gridsize:
 		for y in gridsize:
@@ -31,7 +31,7 @@ func MoveMouse():
 		mine_instance.position = mine_position
 		mine_instance.add_to_group("mine", true)
 		main.add_child(mine_instance)
-		emit_signal("add_mine", mine_instance)
+		emit_signal("add_mine", mine_instance, build_cost)
 
 func _on_buy_mine_pressed():
 	is_mine_button_pressed = true
